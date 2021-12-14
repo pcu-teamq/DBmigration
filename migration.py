@@ -9,9 +9,9 @@ for name in files:
         src = os.path.isdir(name)
         os.rename(name, src[0]+'.csv')
 
-conn = pymysql.connect(host='localhost', user='root', password='', db='arduino', charset='utf8')
+conn = pymysql.connect(host='localhost', user='root', password='sset13132002', db='arduino', charset='utf8')
 curs = conn.cursor()
-sql = "INSERT IGNORE INTO board (NAME, LOG, TIME, ID) VALUES (%s, %s, %s, %s)"
+sql = "INSERT IGNORE INTO board (TIME, ID, NAME, LOG) VALUES (%s, %s, %s, %s)"
 f = open('/Users/hyeokjulee/Downloads/execl_fingerprint/PLX-DAQ-v2.11/data.csv', 'r', encoding='utf-8')
 rd = csv.reader(f)
 
